@@ -15,6 +15,10 @@ export class AppComponent {
   constructor(private httpService: HttpService) { }
 
   getPredict(): void {
+    if (!this.textRequest) {
+      alert('Digita alguma coisa o seu chinelao');
+    }
+
     this.httpService.getPredict(this.textRequest!)
       .subscribe({
         next: (result) => {
