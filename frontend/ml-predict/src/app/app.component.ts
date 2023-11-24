@@ -9,13 +9,13 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class AppComponent {
 
-  textRequest!: string;
-  textResponse!: string;
+  textRequest!: string | null;
+  textResponse!: string | null;
 
   constructor(private httpService: HttpService) { }
 
   getPredict(): void {
-    this.httpService.getPredict(this.textRequest)
+    this.httpService.getPredict(this.textRequest!)
       .subscribe({
         next: (result) => {
           this.textResponse = result;
@@ -24,5 +24,9 @@ export class AppComponent {
           alert('Erro na requsição: ' + error.status);
         }
       });
+  }
+
+  clear(): void {
+    this.textRequest = this.textResponse = null;
   }
 }

@@ -8,14 +8,22 @@
 </head>
 
 <body>
+  <header>
+    <h1>PREDIÇÃO DE ...</h1>
+  </header>
+
   <section class="predict">
-    <input type="text" class="predict--input" placeholder="Digita aqui a parada meu amigo do peito" maxlength="30"
-      [(ngModel)]="textRequest">
+    <div class="predict__box">
+      <input type="text" class="predict__box--input" placeholder="Digita aqui a parada meu amigo do peito" maxlength="30"
+        [(ngModel)]="textRequest">
 
-    <button class="predict--button" (click)="getPredict()">ENVIAR</button>
+      <button class="predict__box--send-btn" (click)="getPredict()">ENVIAR</button>
+
+      <button *ngIf="textResponse" class="predict__box--clear-btn" (click)="clear()">LIMPAR</button>
+
+      <h2 *ngIf="textResponse">{{ textResponse }}</h2>
+    </div>
   </section>
-
-  <h2 *ngIf="textResponse">{{ textResponse }}</h2>
 </body>
 
 </html>
