@@ -13,4 +13,4 @@ def make_predict():
     return make_response(jsonify(f"O texto é: {text_request}" ))
 
 # app.run()
-app.run(debug=False, host='0.0.0.0')
+app.run(debug=False, host='0.0.0.0') 
