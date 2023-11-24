@@ -13,6 +13,9 @@ export class HttpService {
     const params = new HttpParams()
       .set('text_request', text);
 
-    return this.http.get<string>('http://127.0.0.1:5000/getPredict', { params });
+    // const apiUrl = 'http://127.0.0.1:5000/getPredict';
+    const apiUrl = 'https://machine-learning-api-slnh.onrender.com/';
+
+    return this.http.get<string>(apiUrl + 'getPredict', { params });
   }
 }
