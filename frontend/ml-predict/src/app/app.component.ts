@@ -17,6 +17,7 @@ export class AppComponent {
   getPredict(): void {
     if (!this.textRequest) {
       alert('Digita alguma coisa o seu chinelao');
+      return;
     }
 
     this.httpService.getPredict(this.textRequest!)
