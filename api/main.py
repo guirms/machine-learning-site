@@ -12,4 +12,5 @@ def make_predict():
     text_request = request.args.get('text_request')
     return make_response(jsonify(f"O texto é: {text_request}" ))
 
-app.run()
+# app.run()
+app.run(debug=False, host='0.0.0.0')
