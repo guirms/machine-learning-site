@@ -12,4 +12,4 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 def make_predict():
     return make_response(jsonify(get_predict()))
 
-# app.run()
+app.run()
