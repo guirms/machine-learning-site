@@ -182,14 +182,14 @@ def return_results(result):
     }
     
 
-# svc_result = train_and_evaluate_model(svc_model, x_train, y_train, x_test, y_test)
-# knn_result = train_and_evaluate_model(knn_model, x_train, y_train, x_test, y_test)
-# decision_tree_result = train_and_evaluate_model(decision_tree_model, x_train, y_train, x_test, y_test)
+svc_result = train_and_evaluate_model(svc_model, x_train, y_train, x_test, y_test)
+knn_result = train_and_evaluate_model(knn_model, x_train, y_train, x_test, y_test)
+decision_tree_result = train_and_evaluate_model(decision_tree_model, x_train, y_train, x_test, y_test)
 
-# results = [svc_result, knn_result, decision_tree_result]
+results = [svc_result, knn_result, decision_tree_result]
 
-# for result in results:
-#     print_results(result)
+for result in results:
+    print_results(result)
 
 
 

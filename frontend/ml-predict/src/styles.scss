@@ -7,8 +7,9 @@ body {
     flex-direction: column;
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgb(0, 60, 255), rgb(117, 119, 243));
+    background-image: linear-gradient(rgb(0, 20, 85), rgb(117, 119, 243));
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: contain;
+    font-family: 'Roboto', sans-serif; /* Definir 'Roboto' como a fonte principal */
 }

@@ -1,46 +1,56 @@
 header {
-    text-align: center;
-}
-
-.predict {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
     align-items: center;
-    flex-direction: column;
-    flex-direction: column;
-    flex: 1;
-    height: 100%;
-
-    &__box {
-        text-align: center;
-        color: white;
-
-        &--input {
-            border: none;
-            height: 5rem;
-            width: 30rem;
-            border-radius: 1rem;
-            font-size: x-large;
-            box-shadow: 2px;
-            box-shadow: 0px 0px 7px -1px rgba(0, 0, 0, 0.75);
-        }
-
-        &--send-btn,
-        &--clear-btn {
-            cursor: pointer;
-            border: none;
-            width: 10rem;
-            margin-left: 1rem;
-            background-color: #11016b;
-            height: 5rem;
-            border-radius: 1rem;
-            color: white;
-            font-size: x-large;
-            font-weight: bold;
-
-            &:hover {
-                background-color: darken(#11016b, 10%);
-            }
-        }
-    }
 }
+
+.btn-header {
+  cursor: pointer;
+  background-color: green;
+  border: none;
+  border-radius: .5rem;
+  color: white;
+  font-size: x-large;
+  height: 60%;
+  width: 10rem;
+
+  &:hover {
+    background-color: darken(green, 10%);
+  }
+}
+
+.tables {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color:red;
+}
+
+table {
+    margin: 1rem 0;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 2px solid #333;
+  }
+
+  th, td {
+    border: 1px solid #333; /* Define a largura e a cor da borda das células */
+    padding: 8px;
+    text-align: center;
+  }
+
+  th {
+    background-color: #c0bebe; /* Define a cor de fundo para os cabeçalhos */
+  }
+
+  /* Define uma cor alternada para as linhas da tabela */
+  tr {
+    background-color: #f9f9f9;
+  }
+
+  /* Define o estilo para a primeira linha (cabeçalhos) */
+  tr:first-child {
+    font-weight: bold;
+  }

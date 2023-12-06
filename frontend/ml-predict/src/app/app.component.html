@@ -9,21 +9,58 @@
 
 <body>
   <header>
-    <h1>PREDIÇÃO DE ...</h1>
+    <h1 style="color: white;">Predição de câncer de mama</h1>
+
+    <button class="btn-header">Recarregar</button>
   </header>
 
-  <section class="predict">
-    <div class="predict__box">
-      <input type="text" class="predict__box--input" placeholder="Digite aqui a parada" maxlength="30"
-        [(ngModel)]="textRequest">
-
-      <button class="predict__box--send-btn" (click)="getPredict()">ENVIAR</button>
-
-      <button *ngIf="textResponse" class="predict__box--clear-btn" (click)="clear()">LIMPAR</button>
-
-      <h2 *ngIf="textResponse">{{ textResponse }}</h2>
-    </div>
+  <section class="tables">
+    <table *ngFor="let predict of predictResult">
+      <tr>
+        <th></th>
+        <th scope="col">Precisão</th>
+        <th scope="col">Recuperação</th>
+        <th scope="col">F1-score</th>
+        <th scope="col">Suporte</th>
+      </tr>
+      <tr>
+        <th scope="row">B</th>
+        <td>{{ predict.classification_report.precision.b }}</td>
+        <td>{{ predict.classification_report.recall.b }}</td>
+        <td>{{ predict.classification_report.f1_score.b }}</td>
+        <td>{{ predict.classification_report.support.b }}</td>
+      </tr>
+      <tr>
+        <th scope="row">M</th>
+        <td>{{ predict.classification_report.precision.m }}</td>
+        <td>{{ predict.classification_report.recall.m }}</td>
+        <td>{{ predict.classification_report.f1_score.m }}</td>
+        <td>{{ predict.classification_report.support.m }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Acurácia</th>
+        <td>{{ predict.classification_report.precision.accuracy }}</td>
+        <td>{{ predict.classification_report.recall.accuracy }}</td>
+        <td>{{ predict.classification_report.f1_score.accuracy }}</td>
+        <td>{{ predict.classification_report.support.accuracy }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Média macro</th>
+        <td>{{ predict.classification_report.precision.macro_avg }}</td>
+        <td>{{ predict.classification_report.recall.macro_avg }}</td>
+        <td>{{ predict.classification_report.f1_score.macro_avg }}</td>
+        <td>{{ predict.classification_report.support.macro_avg }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Média ponderada</th>
+        <td>{{ predict.classification_report.precision.weighted_avg }}</td>
+        <td>{{ predict.classification_report.recall.weighted_avg }}</td>
+        <td>{{ predict.classification_report.f1_score.weighted_avg }}</td>
+        <td>{{ predict.classification_report.support.weighted_avg }}</td>
+      </tr>
+    </table>
   </section>
+
 </body>
 
 </html>
