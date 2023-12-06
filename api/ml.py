@@ -142,7 +142,7 @@ def return_results(result):
         'm': clean_classification_values[4],
         'accuracy': '',
         'macro_avg': clean_classification_values[10],
-        'weighte_avg': clean_classification_values[14]
+        'weighted_avg': clean_classification_values[14]
     }
 
     recall = {
@@ -150,7 +150,7 @@ def return_results(result):
         'm': clean_classification_values[5],
         'accuracy': '',
         'macro_avg': clean_classification_values[11],
-        'weighte_avg': clean_classification_values[15]
+        'weighted_avg': clean_classification_values[15]
     }
 
     f1_score = {
@@ -158,7 +158,7 @@ def return_results(result):
         'm': clean_classification_values[6],
         'accuracy': clean_classification_values[8],
         'macro_avg': clean_classification_values[12],
-        'weighte_avg': clean_classification_values[16]
+        'weighted_avg': clean_classification_values[16]
     }
 
     support = {
@@ -166,7 +166,7 @@ def return_results(result):
         'm': clean_classification_values[7],
         'accuracy': clean_classification_values[9],
         'macro_avg': clean_classification_values[13],
-        'weighte_avg': clean_classification_values[17]
+        'weighted_avg': clean_classification_values[17]
     }
     
     return {

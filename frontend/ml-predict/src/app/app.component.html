@@ -9,13 +9,19 @@
 
 <body>
   <header>
-    <!-- <h1 style="color: white;">Predição de câncer de mama</h1> -->
-    <h1 style="color: white;">TESTE</h1>
+    <h1 style="color: white;">Predição de câncer de mama</h1>
 
-    <button class="btn-header">Recarregar</button>
+    <button [class]="isLoading ? 'btn-header loading' : 'btn-header'" (click)="getPredict()">Recarregar</button>
   </header>
 
-  <section class="tables">
+  <div class="no-data" *ngIf="!predictResult || isLoading">
+    <h1>Aguardando dados</h1>
+    <img src="https://cdn.dicionariopopular.com/imagens/numero-nove.gif" alt="cachorro adoidado"  width="250" />
+  </div>
+  
+
+
+  <section class="tables" *ngIf="predictResult && !isLoading">
     <div class="predict" *ngFor="let predict of predictResult">
       <div class="predict-header">
         <div class="predict-info">

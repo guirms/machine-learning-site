@@ -3,7 +3,10 @@ header {
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
+    background-color: rgb(0, 20, 85);
     height: 4rem;
+    padding: .5rem 0;
+    margin-bottom: 3rem;
 }
 
 .btn-header {
@@ -13,7 +16,7 @@ header {
   border-radius: .5rem;
   color: white;
   font-size: x-large;
-  height: 60%;
+  height: 3rem;
   width: 10rem;
 
   &:hover {
@@ -21,19 +24,37 @@ header {
   }
 }
 
+.no-data {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.loading {
+  cursor: wait;
+  background-color: #c0bebe;
+
+  &:hover {
+    background-color: #c0bebe;
+  }
+}
+
 .tables {
     width: 100vw;
     display: flex;
+    align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
 .predict-header {
   color: white;
-  height: 9rem;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  margin: .5rem 0;
 }
 
 .accuracy {
