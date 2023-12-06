@@ -1,4 +1,5 @@
 Flask
+Gunicorn
 flask-cors
 matplotlib
 scikit-learn
