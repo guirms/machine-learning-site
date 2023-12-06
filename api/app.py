@@ -12,4 +12,10 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 def make_predict():
     return make_response(jsonify(get_predict()))
 
+@app.route('/teste', methods=['GET'])
+@cross_origin()
+def teste():
+    return "so tapa"
+
+
 app.run()
