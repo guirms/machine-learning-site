@@ -1,3 +1,6 @@
 Flask
-Gunicorn
 flask-cors
+matplotlib
+scikit-learn
+seaborn
+pandas
