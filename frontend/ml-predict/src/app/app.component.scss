@@ -53,8 +53,9 @@ header {
   color: white;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   margin: .5rem 0;
+  height: 6.5rem;
 }
 
 .accuracy {

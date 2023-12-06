@@ -16,9 +16,9 @@
 
   <div class="no-data" *ngIf="!predictResult || isLoading">
     <h1>Aguardando dados</h1>
-    <img src="https://cdn.dicionariopopular.com/imagens/numero-nove.gif" alt="cachorro adoidado"  width="250" />
+    <img src="https://cdn.dicionariopopular.com/imagens/numero-nove.gif" alt="cachorro adoidado" width="250" />
   </div>
-  
+
   <section class="tables" *ngIf="predictResult && !isLoading">
     <div class="predict" *ngFor="let predict of predictResult">
       <div class="predict-header">
@@ -33,6 +33,8 @@
             <li *ngIf="predict.best_params.weights">Weights: {{ predict.best_params.weights }}</li>
             <li *ngIf="predict.best_params.criterion">Criterion: {{ predict.best_params.criterion }}</li>
             <li *ngIf="predict.best_params.min_samples_leaf">Min_samples_leaf: {{ predict.best_params.min_samples_leaf
+              }}</li>
+            <li *ngIf="predict.best_params.min_samples_split">Min_samples_split: {{ predict.best_params.min_samples_split
               }}</li>
             <li *ngIf="predict.best_params.splitter">Splitter: {{ predict.best_params.splitter }}</li>
           </ul>
