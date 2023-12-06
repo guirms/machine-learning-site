@@ -17,7 +17,7 @@ export class AppComponent {
     {
       best_accuracy: 98.02,
       best_params: {
-        C: 10,
+        c: 10,
         gamma: 1,
         kernel: "rbf"
       },

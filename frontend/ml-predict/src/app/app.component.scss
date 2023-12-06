@@ -3,6 +3,7 @@ header {
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
+    height: 4rem;
 }
 
 .btn-header {
@@ -25,32 +26,53 @@ header {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    background-color:red;
+}
+
+.predict-header {
+  color: white;
+  height: 9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.accuracy {
+  margin-bottom: 0;
+}
+
+.best-params {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    margin-right: .2rem;
+  }
+}
+
+.title {
+  margin-right: .5rem;
 }
 
 table {
-    margin: 1rem 0;
     table-layout: fixed;
     border-collapse: collapse;
     border: 2px solid #333;
   }
 
   th, td {
-    border: 1px solid #333; /* Define a largura e a cor da borda das células */
+    border: 1px solid #333;
     padding: 8px;
     text-align: center;
   }
 
   th {
-    background-color: #c0bebe; /* Define a cor de fundo para os cabeçalhos */
+    background-color: #c0bebe;
   }
 
-  /* Define uma cor alternada para as linhas da tabela */
   tr {
     background-color: #f9f9f9;
   }
 
-  /* Define o estilo para a primeira linha (cabeçalhos) */
   tr:first-child {
     font-weight: bold;
   }

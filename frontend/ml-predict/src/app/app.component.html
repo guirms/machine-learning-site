@@ -9,56 +9,82 @@
 
 <body>
   <header>
-    <h1 style="color: white;">Predição de câncer de mama</h1>
+    <!-- <h1 style="color: white;">Predição de câncer de mama</h1> -->
+    <h1 style="color: white;">TESTE</h1>
 
     <button class="btn-header">Recarregar</button>
   </header>
 
   <section class="tables">
-    <table *ngFor="let predict of predictResult">
-      <tr>
-        <th></th>
-        <th scope="col">Precisão</th>
-        <th scope="col">Recuperação</th>
-        <th scope="col">F1-score</th>
-        <th scope="col">Suporte</th>
-      </tr>
-      <tr>
-        <th scope="row">B</th>
-        <td>{{ predict.classification_report.precision.b }}</td>
-        <td>{{ predict.classification_report.recall.b }}</td>
-        <td>{{ predict.classification_report.f1_score.b }}</td>
-        <td>{{ predict.classification_report.support.b }}</td>
-      </tr>
-      <tr>
-        <th scope="row">M</th>
-        <td>{{ predict.classification_report.precision.m }}</td>
-        <td>{{ predict.classification_report.recall.m }}</td>
-        <td>{{ predict.classification_report.f1_score.m }}</td>
-        <td>{{ predict.classification_report.support.m }}</td>
-      </tr>
-      <tr>
-        <th scope="row">Acurácia</th>
-        <td>{{ predict.classification_report.precision.accuracy }}</td>
-        <td>{{ predict.classification_report.recall.accuracy }}</td>
-        <td>{{ predict.classification_report.f1_score.accuracy }}</td>
-        <td>{{ predict.classification_report.support.accuracy }}</td>
-      </tr>
-      <tr>
-        <th scope="row">Média macro</th>
-        <td>{{ predict.classification_report.precision.macro_avg }}</td>
-        <td>{{ predict.classification_report.recall.macro_avg }}</td>
-        <td>{{ predict.classification_report.f1_score.macro_avg }}</td>
-        <td>{{ predict.classification_report.support.macro_avg }}</td>
-      </tr>
-      <tr>
-        <th scope="row">Média ponderada</th>
-        <td>{{ predict.classification_report.precision.weighted_avg }}</td>
-        <td>{{ predict.classification_report.recall.weighted_avg }}</td>
-        <td>{{ predict.classification_report.f1_score.weighted_avg }}</td>
-        <td>{{ predict.classification_report.support.weighted_avg }}</td>
-      </tr>
-    </table>
+    <div class="predict" *ngFor="let predict of predictResult">
+      <div class="predict-header">
+        <div class="predict-info">
+          <h3 class="title">Melhores parâmetros:</h3>
+          <ul class="best-params">
+            <li *ngIf="predict.best_params.c">C: {{ predict.best_params.c }}</li>
+            <li *ngIf="predict.best_params.gamma">Gamma: {{ predict.best_params.gamma }}</li>
+            <li *ngIf="predict.best_params.kernel">Kernel: {{ predict.best_params.kernel }}</li>
+            <li *ngIf="predict.best_params.metric">Metric: {{ predict.best_params.metric }}</li>
+            <li *ngIf="predict.best_params.n_neighbors">N_neighbors: {{ predict.best_params.n_neighbors }}</li>
+            <li *ngIf="predict.best_params.weights">Weights: {{ predict.best_params.weights }}</li>
+            <li *ngIf="predict.best_params.criterion">Criterion: {{ predict.best_params.criterion }}</li>
+            <li *ngIf="predict.best_params.min_samples_leaf">Min_samples_leaf: {{ predict.best_params.min_samples_leaf
+              }}</li>
+            <li *ngIf="predict.best_params.splitter">Splitter: {{ predict.best_params.splitter }}</li>
+          </ul>
+        </div>
+
+        <div class="predict-info-accuracy">
+          <h3 class="title">Melhor precisão: </h3>
+          <p>{{ predict.best_accuracy }}%</p>
+        </div>
+      </div>
+
+      <table>
+        <tr>
+          <th></th>
+          <th scope="col">Precisão</th>
+          <th scope="col">Recuperação</th>
+          <th scope="col">F1-score</th>
+          <th scope="col">Suporte</th>
+        </tr>
+        <tr>
+          <th scope="row">B</th>
+          <td>{{ predict.classification_report.precision.b }}</td>
+          <td>{{ predict.classification_report.recall.b }}</td>
+          <td>{{ predict.classification_report.f1_score.b }}</td>
+          <td>{{ predict.classification_report.support.b }}</td>
+        </tr>
+        <tr>
+          <th scope="row">M</th>
+          <td>{{ predict.classification_report.precision.m }}</td>
+          <td>{{ predict.classification_report.recall.m }}</td>
+          <td>{{ predict.classification_report.f1_score.m }}</td>
+          <td>{{ predict.classification_report.support.m }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Acurácia</th>
+          <td>{{ predict.classification_report.precision.accuracy }}</td>
+          <td>{{ predict.classification_report.recall.accuracy }}</td>
+          <td>{{ predict.classification_report.f1_score.accuracy }}</td>
+          <td>{{ predict.classification_report.support.accuracy }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Média macro</th>
+          <td>{{ predict.classification_report.precision.macro_avg }}</td>
+          <td>{{ predict.classification_report.recall.macro_avg }}</td>
+          <td>{{ predict.classification_report.f1_score.macro_avg }}</td>
+          <td>{{ predict.classification_report.support.macro_avg }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Média ponderada</th>
+          <td>{{ predict.classification_report.precision.weighted_avg }}</td>
+          <td>{{ predict.classification_report.recall.weighted_avg }}</td>
+          <td>{{ predict.classification_report.f1_score.weighted_avg }}</td>
+          <td>{{ predict.classification_report.support.weighted_avg }}</td>
+        </tr>
+      </table>
+    </div>
   </section>
 
 </body>

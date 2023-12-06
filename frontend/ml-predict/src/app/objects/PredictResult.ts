@@ -6,7 +6,7 @@ export interface PredictResult {
 }
 
 interface BestParams {
-    C?: number;
+    c?: number;
     gamma?: number;
     kernel?: string;
     metric?: string;
