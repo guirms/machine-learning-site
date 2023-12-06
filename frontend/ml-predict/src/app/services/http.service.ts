@@ -11,8 +11,8 @@ export class HttpService {
   constructor(private http: HttpClient) { }
 
   getPredict(): Observable<PredictResult[]> {
-    const apiUrl = 'http://127.0.0.1:5000/getPredict';
-    // const apiUrl = 'https://machine-learning-api-slnh.onrender.com/';
+    // const apiUrl = 'http://127.0.0.1:5000/getPredict';
+    const apiUrl = 'https://machine-learning-api-slnh.onrender.com/getPredict';
 
     return this.http.get<PredictResult[]>(apiUrl);
   }
