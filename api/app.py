@@ -18,4 +18,4 @@ def teste():
     return "so tapa"
 
 
-app.run()
+# app.run()
